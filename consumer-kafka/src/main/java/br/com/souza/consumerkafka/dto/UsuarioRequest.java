@@ -1,4 +1,4 @@
-package br.com.souza.producerkafka.dto;
+package br.com.souza.consumerkafka.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

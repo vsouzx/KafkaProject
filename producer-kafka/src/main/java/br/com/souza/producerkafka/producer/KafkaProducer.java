@@ -1,4 +1,4 @@
-package br.com.souza.producerkafka.config;
+package br.com.souza.producerkafka.producer;
 
 import br.com.souza.producerkafka.dto.UsuarioRequest;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -8,12 +8,12 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class KafkaProducerConfig {
+public class KafkaProducer {
 
     private final KafkaTemplate<String, UsuarioRequest> kafkaTemplate;
     private static final String TOPIC = "souza-topic";
 
-    public KafkaProducerConfig(KafkaTemplate<String, UsuarioRequest> kafkaTemplate) {
+    public KafkaProducer(KafkaTemplate<String, UsuarioRequest> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 

@@ -1,6 +1,6 @@
 package br.com.souza.producerkafka.controller;
 
-import br.com.souza.producerkafka.config.KafkaProducerConfig;
+import br.com.souza.producerkafka.producer.KafkaProducer;
 import br.com.souza.producerkafka.dto.UsuarioRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/users")
 public class UsuarioController {
 
-    private final KafkaProducerConfig producer;
+    private final KafkaProducer producer;
 
-    public UsuarioController(KafkaProducerConfig producer) {
+    public UsuarioController(KafkaProducer producer) {
         this.producer = producer;
     }
 
