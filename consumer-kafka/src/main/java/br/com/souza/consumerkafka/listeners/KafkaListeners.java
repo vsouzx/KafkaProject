@@ -1,17 +1,14 @@
 package br.com.souza.consumerkafka.listeners;
 
-import br.com.souza.consumerkafka.dto.UsuarioRequest;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class KafkaListeners {
 
-    @KafkaListener(topics = "souza-topic")
-    void listener(UsuarioRequest data){
+    @KafkaListener(topics = "souza-topic", groupId = "myGroup")
+    public void listener(String data){
         System.out.println("-------------------------------------------------------------");
-        System.out.println(String.format("Novo usuário: %s %s \n", data.getNome(), data.getSobrenome()));
-        System.out.println(String.format("Email: %s", data.getEmail()));
-        System.out.println(String.format("Estado Civil: %s", data.getEstadoCivil()));
+        System.out.println(String.format("Novo usuário: %s \n", data));
     }
 }

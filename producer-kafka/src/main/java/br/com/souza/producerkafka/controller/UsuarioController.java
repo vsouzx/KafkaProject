@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/v1/users")
 public class UsuarioController {
 
     private final KafkaProducer producer;
