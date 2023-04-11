@@ -23,6 +23,7 @@ public class KafkaProducer {
                 .setHeader(KafkaHeaders.TOPIC, TOPIC)
                 .build();
 
+        System.out.println("{Producer} Mensagem enviada.");
         kafkaTemplate.send(message);
     }
 }
